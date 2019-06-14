@@ -6,19 +6,19 @@ define(function(require) {
 	var negativateBtn = document.getElementById('negative');
 
 	var openModalBtn = document.getElementById('historic');
-	
+
 	var closeModalBtn = document.getElementById('closeModal');
-	
+
 	var addAnswerBtn = document.getElementById('addAnswer');
-	
+
 	var openHelpBtn = document.getElementById('openHelp');
-	
+
 	var closeHelpBtn = document.getElementById('closeHelp');
 
 	var cleanBtn = document.getElementById('clean');
 
 	var equalBtn = document.getElementById('equal');
-	
+
 
 	cleanBtn.addEventListener('click', clearVisor);
 
@@ -32,7 +32,7 @@ define(function(require) {
 	openModalBtn.onclick = function() {
 		modal.style.display = 'block';
 	}
-	
+
 	closeModalBtn.onclick = function() {
 		modal.style.display = 'none';
 	}
@@ -40,7 +40,7 @@ define(function(require) {
 	openHelpBtn.onclick = function() {
 		box.style.display = 'block';
 	}
-	
+
 	closeHelpBtn.onclick = function() {
 		box.style.display = 'none';
 	}
@@ -82,7 +82,7 @@ define(function(require) {
 			document.getElementById('visor').innerHTML = '' + number1;
 
 			sessionStorage.setItem('number1', number1)
-		}else {
+		} else {
 			number2 = number2*(-1);
 
 			number2 = number2.toString();
@@ -92,14 +92,14 @@ define(function(require) {
 				visor = '' + number1 + '&#xf7;' + '' + '(' + number2 + ')';
 
 				document.getElementById('visor').innerHTML = visor;
-			}else {
+			} else {
 				visor = '' + number1 + operation + '(' + number2 + ')';
 
 				document.getElementById('visor').innerHTML = visor
 			}
 
 			sessionStorage.setItem('number2', number2)
-		}		
+		}
 	}
 
 	function setNumber(number, storageNumber, numberId) {
@@ -107,14 +107,14 @@ define(function(require) {
 
 		if (storageNumber == null) {
 			sessionStorage.setItem(numberKey, number);
-		} else {
+		}  else {
 			var newStorageNumber = storageNumber + number;
 
 			sessionStorage.setItem(numberKey, newStorageNumber);
 		}
 	}
 
-	function getNumber() {	
+	function getNumber() {
 		listNumbersButtons.forEach(function(button) {
 			button.onclick = function() {
 				var number = button.innerHTML;
@@ -129,8 +129,8 @@ define(function(require) {
 					setNumber(number, storageNumber1, 1);
 
 					document.getElementById('visor').innerHTML = actualVisor + number;
-				} else {
-					if (operation != 'sqrt') {	
+				}  else {
+					if (operation != 'sqrt') {
 						var storageNumber2 = sessionStorage.getItem('number2');
 
 						setNumber(number, storageNumber2, 2);
@@ -145,9 +145,11 @@ define(function(require) {
 	function checkSpecialOperations(operation, actualVisor) {
 		if (operation == 'sqrt') {
 			document.getElementById('visor').innerHTML = '&radic;' + actualVisor;
-		}else if (operation == '/') {
+		}
+		else if (operation == '/') {
 			document.getElementById('visor').innerHTML = actualVisor + '&#xf7;';
-		}else {
+		}
+		else {
 			document.getElementById('visor').innerHTML = actualVisor + operation;
 		}
 	}
@@ -196,7 +198,7 @@ define(function(require) {
 				break;
 			case '%':
 				answer = calculator.percentage(number1, number2);
-				break;																														
+				break;
 		}
 
 		return answer;
@@ -241,7 +243,7 @@ define(function(require) {
 			getNumber();
 
 			getOperation();
-		}else {
+		} else {
 			var number2 = sessionStorage.getItem('number2');
 
 			while (number2.lenght < 13 || number2 == null) getNumber();
