@@ -12,11 +12,13 @@
 	background-color: #f5f8f8;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.18);
 }
+
 .modal-title{
 	margin-top: 3px;
 	margin-bottom: 1px;
 	text-align: center;
 }
+
 .inside-box{
 	height: 150px;
 	width: 250px;
@@ -26,11 +28,13 @@
 	margin-top: 5px;
 	background-color: white;
 }
+
 .buttons{
 	width: 400px;
 	margin-left: 21px;
-	margin-top: 100px;	
+	margin-top: 100px;
 }
+
 .close{
 	height: 30px;
 	width: 100px;
@@ -40,6 +44,7 @@
 	background-color: red;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.18);
 }
+
 .add{
 	height: 30px;
 	width: 100px;
@@ -49,6 +54,7 @@
 	background-color: #02b2da;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.18);
 }
+
 .expression{
 	margin-top: 50px;
 	text-align: center;

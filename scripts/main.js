@@ -3,8 +3,6 @@ define(function(require) {
 
 	var listOperationButtons = document.getElementById('buttons').querySelectorAll('.operationsKey');
 
-	var negativateBtn = document.getElementById('negative');
-
 	var openModalBtn = document.getElementById('historic');
 
 	var closeModalBtn = document.getElementById('closeModal');
@@ -19,15 +17,11 @@ define(function(require) {
 
 	var equalBtn = document.getElementById('equal');
 
-
 	cleanBtn.addEventListener('click', clearVisor);
 
 	equalBtn.addEventListener('click', giveResult);
 
 	addAnswerBtn.addEventListener('click', addAnswer);
-
-	negativateBtn.addEventListener("click", negativateNumber);
-
 
 	openModalBtn.onclick = function() {
 		modal.style.display = 'block';
@@ -67,41 +61,6 @@ define(function(require) {
 		document.getElementById('visor').innerHTML = '' + lastAnswer;
 	}
 
-	function negativateNumber() {
-		var number1 = parseFloat(sessionStorage.getItem('number1'), 10)
-
-		var number2 = parseFloat(sessionStorage.getItem('number2'), 10)
-
-		var operation = sessionStorage.getItem('operation');
-
-		if (operation == null) {
-			number1 = number1*(-1);
-
-			number1 = number1.toString();
-
-			document.getElementById('visor').innerHTML = '' + number1;
-
-			sessionStorage.setItem('number1', number1)
-		} else {
-			number2 = number2*(-1);
-
-			number2 = number2.toString();
-
-			var visor = '';
-			if (operation == '/') {
-				visor = '' + number1 + '&#xf7;' + '' + '(' + number2 + ')';
-
-				document.getElementById('visor').innerHTML = visor;
-			} else {
-				visor = '' + number1 + operation + '(' + number2 + ')';
-
-				document.getElementById('visor').innerHTML = visor
-			}
-
-			sessionStorage.setItem('number2', number2)
-		}
-	}
-
 	function setNumber(number, storageNumber, numberId) {
 		var numberKey = 'number' + numberId;
 
@@ -111,6 +70,18 @@ define(function(require) {
 			var newStorageNumber = storageNumber + number;
 
 			sessionStorage.setItem(numberKey, newStorageNumber);
+		}
+	}
+
+	function setParentheses(storageNumber2, actualVisor, number) {
+		if (actualVisor.includes('(')) {
+			if (actualVisor.includes(')')) {
+				var newVisor = actualVisor.split(')');
+
+				document.getElementById('visor').innerHTML = newVisor[0] + number + ')';
+			} else {
+				document.getElementById('visor').innerHTML = actualVisor + number + ')';
+			}
 		}
 	}
 
@@ -130,13 +101,15 @@ define(function(require) {
 
 					document.getElementById('visor').innerHTML = actualVisor + number;
 				}  else {
-					if (operation != 'sqrt') {
-						var storageNumber2 = sessionStorage.getItem('number2');
+					var storageNumber2 = sessionStorage.getItem('number2');
 
+					if (operation != 'sqrt') {
 						setNumber(number, storageNumber2, 2);
 
 						document.getElementById('visor').innerHTML = actualVisor + number;
 					}
+
+					setParentheses(storageNumber2, actualVisor, number);
 				}
 			}
 		});
@@ -164,9 +137,13 @@ define(function(require) {
 				var storageOperation = sessionStorage.getItem('operation');
 
 				if (storageOperation == null) {
+					if (setMinusToNumber(operation, 1)) { return; }
+
 					checkSpecialOperations(operation, actualVisor);
 
 					sessionStorage.setItem('operation', operation);
+				} else {
+					if (setMinusToNumber(operation, 2)) { return; }
 				}
 			}
 		});
@@ -230,6 +207,33 @@ define(function(require) {
 
 			sessionStorage.setItem('number1', answer);
 		}
+	}
+
+	function setMinusToNumber(operation, numberId) {
+		if (operation == '-') {
+			var storageNumber1 = sessionStorage.getItem('number1');
+
+			var storageNumber2 = sessionStorage.getItem('number2');
+
+			var actualVisor = document.getElementById('visor').innerHTML;
+
+			if (numberId == 1 && storageNumber1 == null) {
+				setNumber('-', storageNumber1, 1);
+
+				document.getElementById('visor').innerHTML = actualVisor + '-';
+
+				return true;
+			}
+			else if (numberId == 2 && storageNumber2 == null) {
+				setNumber('-', storageNumber2, 2);
+
+				document.getElementById('visor').innerHTML = actualVisor + '(' + '-';
+
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	function initialize() {
