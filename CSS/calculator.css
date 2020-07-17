@@ -1,78 +1,78 @@
-.calculator{
+.calculator {
   height: 612px;
-	width: 420px;
-	border: 3px solid black;
-	border-radius: 10px;
-	border-color: rgba(0, 0, 0, 0.8);
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
+  width: 420px;
+  border: 3px solid black;
+  border-radius: 10px;
+  border-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.visor{
-	border: 3px solid black;
-	border-color: rgba(0, 0, 0, 0.7);
-	border-radius: 5px;
-	margin-top: 10px;
-	margin-left: 27px;
-	height: 60px;
-	width: 360px;
-	text-align: right;
-	font-size: 20px;
-	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.18);
+.visor {
+  border: 3px solid black;
+  border-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 27px;
+  height: 60px;
+  width: 360px;
+  text-align: right;
+  font-size: 20px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.18);
 }
 
-.keyboard{
-	border: 0,2px solid;
-	border-radius: 5px;
-	padding-bottom: 12px;
-	margin-left: 26px;
-	margin-top: 5px;
-	width: 375px;
+.keyboard {
+  border: 0, 2px solid;
+  border-radius: 5px;
+  padding-bottom: 12px;
+  margin-left: 26px;
+  margin-top: 5px;
+  width: 375px;
 }
 
-.numbersKey{
-	padding: 5px;
-	margin-right: 8px;
-	margin-bottom: : 10px;
-	margin-top: 10px;
+.numbersKey {
+  padding: 5px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   height: 82px;
-	width: 82px;
-	border-radius: 10px;
-	font-size: 20px;
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
+  width: 82px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.operationsKey{
-	padding: 5px;
-	margin-right: 8px;
-	margin-bottom: : 10px;
-	margin-top: 10px;
+.operationsKey {
+  padding: 5px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   height: 82px;
-	width: 82px;
-	border-radius: 10px;
-	font-size: 20px;
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
+  width: 82px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.othersKey{
-	padding: 5px;
-	margin-right: 8px;
-	margin-bottom: : 10px;
-	margin-top: 10px;
+.othersKey {
+  padding: 5px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   height: 82px;
-	width: 82px;
-	border-radius: 10px;
-	font-size: 20px;
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
+  width: 82px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.clean{
-	background-color: red;
-	border-color: red;
+.clean {
+  background-color: red;
+  border-color: red;
 }
 
-.equal{
-	background-color:  #02b2da;
-	border-color: #02b2da;
+.equal {
+  background-color: #02b2da;
+  border-color: #02b2da;
 }
 
 .historic-tooltip {
@@ -131,27 +131,27 @@
   opacity: 1;
 }
 
-.top-buttons{
-	margin-left: 285px;
-	margin-top: 10px;
+.top-buttons {
+  margin-left: 285px;
+  margin-top: 10px;
 }
 
-.historic{
-	margin-right: 15px;
-	border-radius: 50%;
-	height: 45px;
-	width: 45px;
-	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.18);
+.historic {
+  margin-right: 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.18);
 }
 
-.help{
-	border-radius: 50%;
-	height: 45px;
-	width: 45px;
-	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
+.help {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.icon{
-	font-size: 20px;
-	color: rgba(0, 0, 0, 0.74);
+.icon {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.74);
 }
