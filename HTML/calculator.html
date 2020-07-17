@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Calculator</title>
+  <head>
+    <title>Calculator</title>
 
-		<link rel="stylesheet" type="text/css" href="../CSS/calculator.css">
-		<link rel="stylesheet" type="text/css" href="../CSS/modal.css">
-		<link rel="stylesheet" type="text/css" href="../CSS/box.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/calculator.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/modal.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/box.css" />
 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
 
-		<meta charset="utf-8"/>
+    <meta charset="utf-8" />
 
-		<script data-main="../scripts/config" src="../scripts/require.js"></script>
-	</head>
+    <script data-main="../scripts/config" src="../scripts/require.js"></script>
+  </head>
 
-	<body>
-		<div class="modal" id="modal">
-			<p class="modal-title">Última operação</p>
-			<div class="inside-box">
-				<div class="expression-box">
-					<p class="expression" id="lastExpression"></p>
-				</div>
+  <body>
+    <div class="modal" id="modal">
+      <p class="modal-title">Última operação</p>
+      <div class="inside-box">
+        <div class="expression-box">
+          <p class="expression" id="lastExpression"></p>
+        </div>
 
-				<div class="buttons">
-					<button class="close" id="closeModal">Fechar</button>
+        <div class="buttons">
+          <button class="close" id="closeModal">Fechar</button>
 
-					<button class="add" id="addAnswer">Adicionar</button>
-				</div>
-			</div>
-		</div>
+          <button class="add" id="addAnswer">Adicionar</button>
+        </div>
+      </div>
+    </div>
 
-		<div class="box" id="box">
-			<div class="inside-help-box">
-				<p class="help-title">AJUDA</p>
+    <div class="box" id="box">
+      <div class="inside-help-box">
+        <p class="help-title">AJUDA</p>
 
-				<p class="help-content">
-					Para utilizar basta clicar no número desejado e em seguida na operação, e se for preciso,
-					no segundo número da operação.<br/><br/>
-					EX:
-					4 '+' &radic; = &radic;4 ; EX:  3 '+' x '+' 4 = 7 ;<br/><br/>
-					Para porcentagem deve primeiro digitar o número que se refere à porcentagem e depois o valor.<br/><br/>
-					EX: 10 porcento de 100<br/><br/>
-					10 '+' % '+' 100 = 100*10% = 10;<br/>
-				</p>
+        <p class="help-content">
+          Para utilizar basta clicar no número desejado e em seguida na
+          operação, e se for preciso, no segundo número da operação.<br /><br />
+          EX: 4 '+' &radic; = &radic;4 ; EX: 3 '+' x '+' 4 = 7 ;<br /><br />
+          Para porcentagem deve primeiro digitar o número que se refere à
+          porcentagem e depois o valor.<br /><br />
+          EX: 10 porcento de 100<br /><br />
+          10 '+' % '+' 100 = 100*10% = 10;<br />
+        </p>
 
-				<button class="close-help" id="closeHelp">Fechar</button>
-			</div>
-		</div>
+        <button class="close-help" id="closeHelp">Fechar</button>
+      </div>
+    </div>
 
-		<div class="calculator">
-			<div class="top-buttons">
-				<div class="historic-tooltip">
-					<button class="historic" id="historic">
-						<span class="historic-tooltip-content">Última operação</span>
+    <div class="calculator">
+      <div class="top-buttons">
+        <div class="historic-tooltip">
+          <button class="historic" id="historic">
+            <span class="historic-tooltip-content">Última operação</span>
 
-						<i class="fas fa-history icon"></i>
-					</button>
-				</div>
+            <i class="fas fa-history icon"></i>
+          </button>
+        </div>
 
-				<div class="help-tooltip">
-					<button class="help" id="openHelp">
-						<span class="help-tooltip-content">Ajuda</span>
+        <div class="help-tooltip">
+          <button class="help" id="openHelp">
+            <span class="help-tooltip-content">Ajuda</span>
 
-						<i class="fas fa-question icon"></i>
-					</button>
-				</div>
-			</div>
+            <i class="fas fa-question icon"></i>
+          </button>
+        </div>
+      </div>
 
-			<div class="visor">
-				<p id="visor"></p>
-			</div>
+      <div class="visor">
+        <p id="visor"></p>
+      </div>
 
-			<div class="keyboard" id="buttons">
-				<button class="othersKey clean" id="clean">C</button>
-				<button class="operationsKey" id="sqrt">&radic;</button>
-				<button class="operationsKey" id="^">x<sup>y</sup></button>
-				<button class="operationsKey" id="/">&#xf7;</button>
-				<button class="numbersKey">1</button>
-				<button class="numbersKey">2</button>
-				<button class="numbersKey">3</button>
-				<button class="operationsKey" id="x">x</button>
-				<button class="numbersKey">4</button>
-				<button class="numbersKey">5</button>
-				<button class="numbersKey">6</button>
-				<button class="operationsKey" id="-">-</button>
-				<button class="numbersKey">7</button>
-				<button class="numbersKey">8</button>
-				<button class="numbersKey">9</button>
-				<button class="operationsKey" id="+">+</button>
-				<button class="numbersKey">0</button>
-				<button class="numbersKey" id=".">.</button>
-				<button class="operationsKey" id="%">%</button>
-				<button class="othersKey equal" id="equal">=</button>
-			</div>
-		</div>
-	</body>
+      <div class="keyboard" id="buttons">
+        <button class="othersKey clean" id="clean">C</button>
+        <button class="operationsKey" id="sqrt">&radic;</button>
+        <button class="operationsKey" id="^">x<sup>y</sup></button>
+        <button class="operationsKey" id="/">&#xf7;</button>
+        <button class="numbersKey">1</button>
+        <button class="numbersKey">2</button>
+        <button class="numbersKey">3</button>
+        <button class="operationsKey" id="x">x</button>
+        <button class="numbersKey">4</button>
+        <button class="numbersKey">5</button>
+        <button class="numbersKey">6</button>
+        <button class="operationsKey" id="-">-</button>
+        <button class="numbersKey">7</button>
+        <button class="numbersKey">8</button>
+        <button class="numbersKey">9</button>
+        <button class="operationsKey" id="+">+</button>
+        <button class="numbersKey">0</button>
+        <button class="numbersKey" id=".">.</button>
+        <button class="operationsKey" id="%">%</button>
+        <button class="othersKey equal" id="equal">=</button>
+      </div>
+    </div>
+  </body>
 </html>
